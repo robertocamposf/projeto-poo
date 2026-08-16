@@ -1,4 +1,4 @@
-# Sistema de Clínica Veterinária 🐾
+# Sistema de Clínica Veterinária Petlife 🐾
 
 Projeto desenvolvido para a disciplina de **Programação Orientada a Objetos (POO)**. O sistema consiste em uma aplicação para gerenciamento de atendimentos, pacientes, tutores e serviços de uma clínica veterinária.
 
