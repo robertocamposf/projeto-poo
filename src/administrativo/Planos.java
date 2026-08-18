@@ -12,10 +12,14 @@ E DE UTILIZAR DURANTE O PROJETO OS 4 PILARES DE POO: ABSTRAÇÃO, ENCAPSULAMENTO
 package administrativo;
 
 public class Planos{
-    String NomeDoPlano;
-    float PorcentagemDoDesconto;
-    float MensalidadeDoCliente;
+    private String NomeDoPlano;
+    private float PorcentagemDoDesconto;
+    private float MensalidadeDoCliente;
 
+    public void planoDoCliente(){ //metodo para guardar o nome do plano, a porcentagem do desconto por "compra" e mensalidade
+
+
+    }
 
 
 

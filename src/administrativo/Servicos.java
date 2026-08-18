@@ -12,10 +12,14 @@ E DE UTILIZAR DURANTE O PROJETO OS 4 PILARES DE POO: ABSTRAÇÃO, ENCAPSULAMENTO
 package administrativo;
 
 public class Servicos {
-    String NomeDoServico;
-    float PrecoBase; 
+    private String NomeDoServico;
+    private float PrecoBase; 
+
+    public void servicoOfertado(){ //metodo para guardar o preco base dos "produtos" e o nome do servico ofertado
 
 
+
+    }
 
 
 

@@ -15,14 +15,20 @@ package administrativo;
 public class Cliente {
 
 
-    //ATRIBUTOS
-    String nomeDoCliente;
-    String cpfDoCliente;
-    String enderecoDoCliente;
-    String telefoneDoCliente;
-    Planos planoDoCliente;
+    //ATRIBUTOS - Private serve pra que a mudança dessa variavel nao seja aberta para outros usuários. 
+
+    private String nomeDoCliente;
+    private String cpfDoCliente;
+    private String enderecoDoCliente;
+    private String telefoneDoCliente;
+    private Planos planoDoCliente; //Associação de classes 
+
+    //METODOS
+        public void cadastrarCliente(){ //envolver nome do cliente, cpf, endereco e telefone nessa classe. 
+                                         
 
 
+        }
 
 
 
