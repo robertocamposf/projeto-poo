@@ -11,17 +11,33 @@ E DE UTILIZAR DURANTE O PROJETO OS 4 PILARES DE POO: ABSTRAÇÃO, ENCAPSULAMENTO
 package administrativo;
 
 public class Faturamento {
+    //Atributos
     private float valorTotalDaConta;
     private float valorDesconto;
 
-    public float CalcularConta(){ //metodo para calcular o valor da conta do cliente + desconto de plano. 
+    //Metodos
 
 
 
 
+
+    //gets e sets - metodos acessores 
+
+    public float getValorTotalDaConta(){
+        return valorTotalDaConta;
     }
 
+    public void setValorTotalDaConta(float valorTotalDaConta){
+        this.valorTotalDaConta = valorTotalDaConta;
+    }
 
+    public float  getValorDesconto(){
+        return valorDesconto;
+    }
+
+    public void setValorDesconto(float valorDesconto){
+        this.valorDesconto = valorDesconto;
+    }
 
 
 }

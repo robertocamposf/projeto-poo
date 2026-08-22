@@ -24,16 +24,58 @@ public class Cliente {
     private Planos planoDoCliente; //Associação de classes 
 
     //METODOS
-        public void cadastrarCliente(){ //envolver nome do cliente, cpf, endereco e telefone nessa classe. 
-                                         
-
-
-        }
+    
 
 
 
 
 
+
+
+    //Gets e sets - Encapsulamento: protege os dados da classe - O get serve para o sistema ler o nome do cliente. 
+    //- o set serve para cadastrar o nome ou alterar o nome
+
+    public String getNomeDoCliente(){
+        return nomeDoCliente;
+    }
+
+    public void setNomeDoCliente(String nomeDoCliente){
+        this.nomeDoCliente = nomeDoCliente;
+    }
+
+    public String getCpfDoCliente(){
+        return cpfDoCliente;
+    }
+
+    public void setCpfDoCliente(String cpfDoCliente){
+        this.cpfDoCliente = cpfDoCliente;
+    }
+
+    public String getEnderecoDoCliente(){
+        return enderecoDoCliente;
+    }
+    
+    public void setEnderecoDoCliente(String enderecoDoCliente){
+        this.enderecoDoCliente = enderecoDoCliente;
+    }
+
+    public String getTelefoneDoCliente(){  
+        return telefoneDoCliente;
+    }
+
+    public void setTelefoneDoCliente(String telefoneDoCliente){
+        this.telefoneDoCliente = telefoneDoCliente;
+    }
+
+    public Planos getPlanoDoCliente(){
+        return planoDoCliente;
+    }
+
+    public void setPlanoDoCliente(Planos planoDoCliente){
+        this.planoDoCliente = planoDoCliente;
+    }
 
     
+
+
 }
