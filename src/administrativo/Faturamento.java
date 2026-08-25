@@ -18,7 +18,19 @@ public class Faturamento {
     //Metodos
 
 
+    public float calcularValorDaConta(){//nao precisa declarar parametros pois o metodo ja tem acesso as variaveis da classe
 
+        float valorFinal = valorTotalDaConta - valorDesconto;
+        return valorFinal;
+
+    }
+
+    public void exibirFatura(){
+        System.out.printf("\n----Informacoes Da Conta----");
+        System.out.printf("\nValor total da conta: %.2f", valorTotalDaConta);
+        System.out.printf("\nValor do desconto: %.2f", valorDesconto);
+        System.out.printf("Valor final a ser pago: %.2f", calcularValorDaConta());
+    }
 
 
     //gets e sets - metodos acessores 

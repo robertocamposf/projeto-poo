@@ -25,7 +25,16 @@ public class Cliente {
 
     //METODOS
     
+    public void MostrarDadosDoCliente(){
+        System.out.printf("\n----DADOS DO CLIENTE----");
+        System.out.printf("\nNome do cliente: %s", nomeDoCliente);
+        System.out.printf("\nCpf do cliente: %s", cpfDoCliente);
+        System.out.printf("\nEndereco do cliente: %s", enderecoDoCliente);
+        System.out.printf("\nTelefone do cliente: %s", telefoneDoCliente);
+        System.out.printf("\n------------------------");
 
+
+    }
 
 
 

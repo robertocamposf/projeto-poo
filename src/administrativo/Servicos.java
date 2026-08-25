@@ -15,7 +15,21 @@ public class Servicos {
     private String nomeDoServico;
     private float precoBase; 
     
-    
+    //Metodos
+
+    public void catalogoDeServicos(){
+        System.out.printf("\n----Catalogo De Servicos----");
+        System.out.printf("\nNome do servico: %s", nomeDoServico);
+        System.out.printf("\nPreco base do servico: %.2f", precoBase);
+        System.out.printf("\n----------------------------");
+
+
+    }
+
+
+
+
+
 
 
 
