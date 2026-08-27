@@ -23,7 +23,7 @@ public class Planos{
     public void exibirDadosDoPlano(){
         System.out.printf("\n----Informacoes Dos Planos----");
         System.out.printf("\nNome do plano: %s", nomeDoPlano);
-        System.out.printf("\nPorcentagem de desconto: %%.2f", porcentagemDoDesconto);
+        System.out.printf("\nPorcentagem de desconto: %.2f%%", porcentagemDoDesconto);
         System.out.printf("\nMensalidade do cliente: %.2f", mensalidadeDoCliente);
         System.out.printf("\n-------------------------------");
     }

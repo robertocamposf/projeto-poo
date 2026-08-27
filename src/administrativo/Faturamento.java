@@ -26,10 +26,10 @@ public class Faturamento {
     }
 
     public void exibirFatura(){
-        System.out.printf("\n----Informacoes Da Conta----");
+        System.out.printf("\n\n----Informacoes Da Conta----");
         System.out.printf("\nValor total da conta: %.2f", valorTotalDaConta);
         System.out.printf("\nValor do desconto: %.2f", valorDesconto);
-        System.out.printf("Valor final a ser pago: %.2f", calcularValorDaConta());
+        System.out.printf("\nValor final a ser pago: %.2f", calcularValorDaConta());
     }
 
 
