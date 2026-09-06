@@ -15,6 +15,32 @@ public class Servicos {
     private String nomeDoServico;
     private float precoBase; 
     
+
+    //Construtores
+
+    public Servicos(){
+    }
+
+    public Servicos(String nomeDoServico, float precoBase){
+        setNomeDoServico(nomeDoServico);
+        setPrecoBase(precoBase);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //Metodos
 
     public void catalogoDeServicos(){
@@ -40,6 +66,16 @@ public class Servicos {
     }
 
     public void setNomeDoServico(String nomeDoServico){
+        if(nomeDoServico == null || nomeDoServico.trim().isEmpty()){
+            System.out.println("O nome do servico nao deve conter apenas espacos ou vazio!");
+        }
+
+         for(int i = 0; i < nomeDoServico.length(); i++){
+            if(Character.isDigit(nomeDoServico.charAt(i))){
+                System.out.println("O nome do servico nao pode conter numeros!");
+                return;
+            }}
+
         this.nomeDoServico = nomeDoServico;
     }
 
@@ -48,7 +84,12 @@ public class Servicos {
     }
 
     public void setPrecoBase(float precoBase){
+        if(precoBase <= 0){
+            System.out.println("O preco base nao deve ser negativo ou igual a zero!");
+        }
+        else{
         this.precoBase = precoBase;
+    }
     }
 
 }

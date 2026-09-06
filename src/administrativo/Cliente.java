@@ -23,6 +23,58 @@ public class Cliente {
     private String telefoneDoCliente;
     private Planos planoDoCliente; //Associação de classes 
 
+
+    //Construtores - vai saber o construtor que vai ser utilizado por meio dos parametros
+
+
+    //⚠️OBS: NESSE CASO NOS TEMOS 3 CONSTRUTORES POR CONTA DA VARIAVEL PLANO DO CLIENTE, POIS ELA SE RELACIONA COM A CLASSE PLANOS E EXISTE USUARIOS TANTO COM PLANO
+    //TANTO SEM PLANO⚠️
+
+    //Construtor vazio
+    public Cliente(){
+        this.nomeDoCliente = "Sem nome do cliente";
+        this.cpfDoCliente = "Sem cpf do cliente";
+        this.enderecoDoCliente = "Sem endereco do cliente";
+        this.telefoneDoCliente = "Sem telefone do cliente";
+        this.planoDoCliente = null;
+    }
+
+
+    //Construtor sem o plano do cliente - Sem isso teria q sempre passar o plano do cliente como null.
+    public Cliente(String nomeDoCliente, String cpfDoCliente, String enderecoDoCliente, String telefoneDoCliente){
+        setNomeDoCliente(nomeDoCliente); //usa os sets para validar os dados passados nos parametros.
+        setCpfDoCliente(cpfDoCliente);
+        setEnderecoDoCliente(enderecoDoCliente);
+        setTelefoneDoCliente(telefoneDoCliente);
+        this.planoDoCliente = null;
+    }
+
+    //Construtor Completo
+
+    public Cliente(String nomeDoCliente, String cpfDoCliente, String enderecoDoCliente, String telefoneDoCliente, Planos planoDoCliente){
+        setNomeDoCliente(nomeDoCliente);
+        setCpfDoCliente(cpfDoCliente);
+        setEnderecoDoCliente(enderecoDoCliente);
+        setTelefoneDoCliente(telefoneDoCliente);
+        setPlanoDoCliente(planoDoCliente);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //METODOS
     
     public void MostrarDadosDoCliente(){
@@ -49,6 +101,15 @@ public class Cliente {
     }
 
     public void setNomeDoCliente(String nomeDoCliente){
+        if(nomeDoCliente == null || nomeDoCliente.trim().isEmpty()){
+            System.out.println("O nome do cliente nao deve ser vazio ou conter apenas espacos!");
+            return;
+        }
+        for(int i = 0; i < nomeDoCliente.length(); i++){
+            if(Character.isDigit(nomeDoCliente.charAt(i))){
+                System.out.println("O nome do cliente nao pode conter numeros!");
+                return;
+            }}
         this.nomeDoCliente = nomeDoCliente;
     }
 
@@ -57,7 +118,13 @@ public class Cliente {
     }
 
     public void setCpfDoCliente(String cpfDoCliente){
-        this.cpfDoCliente = cpfDoCliente;
+        if(cpfDoCliente == null || cpfDoCliente.trim().isEmpty()){
+            System.out.println("O cpf do cliente nao deve ser vazio ou conter apenas espacos!");
+            return;
+        }
+
+            this.cpfDoCliente = cpfDoCliente;
+    }
     }
 
     public String getEnderecoDoCliente(){
@@ -65,7 +132,11 @@ public class Cliente {
     }
     
     public void setEnderecoDoCliente(String enderecoDoCliente){
-        this.enderecoDoCliente = enderecoDoCliente;
+        if(enderecoDoCliente == null || enderecoDoCliente.trim().isEmpty()){
+            System.out.println("O endereco do cliente nao deve ser vazio ou conter apenas espacos!");
+            return;
+        }
+            this.enderecoDoCliente = enderecoDoCliente;}
     }
 
     public String getTelefoneDoCliente(){  
@@ -73,6 +144,10 @@ public class Cliente {
     }
 
     public void setTelefoneDoCliente(String telefoneDoCliente){
+        if(telefoneDoCliente == null || telefoneDoCliente.trim().isEmpty()){
+            System.out.println("O telefone do cliente nao deve ser vazio ou conter apenas espacos!");
+            return;
+        }
         this.telefoneDoCliente = telefoneDoCliente;
     }
 
@@ -81,6 +156,11 @@ public class Cliente {
     }
 
     public void setPlanoDoCliente(Planos planoDoCliente){
+        if(planoDoCliente == null){
+            System.out.printf("O plano do cliente nao pode estar vazio!");
+            return;
+        }
+
         this.planoDoCliente = planoDoCliente;
     }
 

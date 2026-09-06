@@ -15,6 +15,44 @@ public class Faturamento {
     private float valorTotalDaConta;
     private float valorDesconto;
 
+    //Construtores
+
+    public Faturamento(){
+        
+    }
+
+    public Faturamento(float valorTotalDaConta, float valorDesconto){
+        setValorTotalDaConta(valorTotalDaConta);
+        setValorDesconto(valorDesconto);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //Metodos
 
 
@@ -40,7 +78,11 @@ public class Faturamento {
     }
 
     public void setValorTotalDaConta(float valorTotalDaConta){
-        this.valorTotalDaConta = valorTotalDaConta;
+        if(valorTotalDaConta <= 0){
+            System.out.println("esse valor do total da conta nao e possivel!");
+        }
+        else{
+            this.valorTotalDaConta = valorTotalDaConta;}
     }
 
     public float  getValorDesconto(){
@@ -48,7 +90,11 @@ public class Faturamento {
     }
 
     public void setValorDesconto(float valorDesconto){
-        this.valorDesconto = valorDesconto;
+        if(valorDesconto <= 0){
+            System.out.println("esse valor de desconto nao e possivel!");
+        }
+        else{
+            this.valorDesconto = valorDesconto;}
     }
 
 
