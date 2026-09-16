@@ -3,7 +3,7 @@
 /*Cadastro de Clientes: Funcionalidade para registrar os donos dos animais. Enquadramento
 POO: Classes, Atributos e Métodos. */
 
-/*LEMBRAR DE DAR PULL E PUSH E FAZER APENAS AS PARTES CONFORME AS AULAS DE IVNA, SEM PRESSA 
+/*LEMBRAR DE DAR PULL E PUSH E FAZER APENAS AS PARTES CONFORME AS AULAS, SEM PRESSA 
 
 E DE UTILIZAR DURANTE O PROJETO OS 4 PILARES DE POO: ABSTRAÇÃO, ENCAPSULAMENTO, HERANÇA E POLIFORMISMO
 */
@@ -125,7 +125,7 @@ public class Cliente {
 
             this.cpfDoCliente = cpfDoCliente;
     }
-    }
+
 
     public String getEnderecoDoCliente(){
         return enderecoDoCliente;
@@ -137,7 +137,7 @@ public class Cliente {
             return;
         }
             this.enderecoDoCliente = enderecoDoCliente;}
-    }
+    
 
     public String getTelefoneDoCliente(){  
         return telefoneDoCliente;
@@ -157,7 +157,7 @@ public class Cliente {
 
     public void setPlanoDoCliente(Planos planoDoCliente){
         if(planoDoCliente == null){
-            System.out.printf("O plano do cliente nao pode estar vazio!");
+            System.out.println("O plano do cliente nao pode estar vazio!");
             return;
         }
 
