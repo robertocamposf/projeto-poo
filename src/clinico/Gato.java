@@ -38,7 +38,7 @@ public class Gato extends Animal {
         this.raca = raca;
     }
 
-    public isMorde() {
+public boolean isMorde() {
         return morde;
     }
 
