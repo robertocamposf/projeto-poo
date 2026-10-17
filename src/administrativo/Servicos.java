@@ -11,7 +11,7 @@ E DE UTILIZAR DURANTE O PROJETO OS 4 PILARES DE POO: ABSTRAÇÃO, ENCAPSULAMENTO
 
 package administrativo;
 
-public class Servicos {
+public class Servicos implements Faturavel{
     private String nomeDoServico;
     private float precoBase; 
     
@@ -28,19 +28,6 @@ public class Servicos {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     //Metodos
 
     public void catalogoDeServicos(){
@@ -54,11 +41,6 @@ public class Servicos {
 
 
 
-
-
-
-
-
     //Gets e sets - metodos de acesso
 
     public String getNomeDoServico(){
@@ -68,14 +50,8 @@ public class Servicos {
     public void setNomeDoServico(String nomeDoServico){
         if(nomeDoServico == null || nomeDoServico.trim().isEmpty()){
             System.out.println("O nome do servico nao deve conter apenas espacos ou vazio!");
+            return;
         }
-
-         for(int i = 0; i < nomeDoServico.length(); i++){
-            if(Character.isDigit(nomeDoServico.charAt(i))){
-                System.out.println("O nome do servico nao pode conter numeros!");
-                return;
-            }}
-
         this.nomeDoServico = nomeDoServico;
     }
 
@@ -90,6 +66,17 @@ public class Servicos {
         else{
         this.precoBase = precoBase;
     }
+    }
+
+    @Override
+    public float calcularValorFinal() {
+        return getPrecoBase();
+    }
+
+    @Override
+    public void exibirDetalhesFatura() {
+        System.out.printf("%n[Fatura Servico] %s - Preco Base: R$ %.2f%n", 
+            getNomeDoServico(), getPrecoBase());
     }
 
 }

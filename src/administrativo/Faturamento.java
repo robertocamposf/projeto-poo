@@ -14,6 +14,8 @@ public class Faturamento {
     //Atributos
     private float valorTotalDaConta;
     private float valorDesconto;
+    private Cliente cliente;
+    private Servicos servico;
 
     //Construtores
 
@@ -21,35 +23,28 @@ public class Faturamento {
         
     }
 
-    public Faturamento(float valorTotalDaConta, float valorDesconto){
-        setValorTotalDaConta(valorTotalDaConta);
-        setValorDesconto(valorDesconto);
+    public Faturamento(Cliente cliente, Servicos servico){
+        setCliente(cliente);
+        setServico(servico);
+        processarFatura();
     }
 
+    //Lógica para puxar o preço do serviço e o desconto do plano do cliente
+    public void processarFatura() {
+        if (servico != null) {
+            this.valorTotalDaConta = servico.getPrecoBase();
+        } else {
+            this.valorTotalDaConta = 0.0f;
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        //Verifica se o cliente possui plano para aplicar o desconto
+        if (cliente != null && cliente.getPlanoDoCliente() != null) {
+            float porcentagem = cliente.getPlanoDoCliente().getPorcentagemDoDesconto();
+            this.valorDesconto = (this.valorTotalDaConta * porcentagem) / 100.0f;
+        } else {
+            this.valorDesconto = 0.0f;
+        }
+    }
 
 
 
@@ -63,15 +58,44 @@ public class Faturamento {
 
     }
 
-    public void exibirFatura(){
-        System.out.printf("\n\n----Informacoes Da Conta----");
-        System.out.printf("\nValor total da conta: %.2f", valorTotalDaConta);
-        System.out.printf("\nValor do desconto: %.2f", valorDesconto);
-        System.out.printf("\nValor final a ser pago: %.2f", calcularValorDaConta());
+    public void exibirFatura() {
+        System.out.printf("%n---- Informacoes Da Fatura ----");
+        if (cliente != null) {
+            System.out.printf("%nCliente: %s", cliente.getNomeDoCliente());
+            if (cliente.getPlanoDoCliente() != null) {
+                System.out.printf("%nPlano Ativo: %s", cliente.getPlanoDoCliente().getNomeDoPlano());
+            } else {
+                System.out.printf("%nPlano Ativo: Sem plano cadastrado");
+            }
+        }
+        if (servico != null) {
+            System.out.printf("%nServico Prestado: %s", servico.getNomeDoServico());
+        }
+        System.out.printf("%nValor base da conta: R$ %.2f", valorTotalDaConta);
+        System.out.printf("%nValor do desconto: R$ %.2f", valorDesconto);
+        System.out.printf("%nValor final a ser pago: R$ %.2f", calcularValorDaConta());
+        System.out.printf("%n-------------------------------%n");
+    }
+
+    //gets e sets - metodos acessores 
+
+    public Cliente getcliente(){
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente){
+        this.cliente = cliente;
+    }
+
+    public Servicos getServico(){
+        return servico;
+    }
+
+    public void setServico(Servicos servico){
+        this.servico = servico;
     }
 
 
-    //gets e sets - metodos acessores 
 
     public float getValorTotalDaConta(){
         return valorTotalDaConta;
@@ -90,7 +114,7 @@ public class Faturamento {
     }
 
     public void setValorDesconto(float valorDesconto){
-        if(valorDesconto <= 0){
+        if(valorDesconto < 0){
             System.out.println("esse valor de desconto nao e possivel!");
         }
         else{

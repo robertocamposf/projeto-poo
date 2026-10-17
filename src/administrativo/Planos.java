@@ -11,7 +11,7 @@ E DE UTILIZAR DURANTE O PROJETO OS 4 PILARES DE POO: ABSTRAÇÃO, ENCAPSULAMENTO
 
 package administrativo;
 
-public class Planos{
+public class Planos implements Faturavel {
     //Atributos
     private String nomeDoPlano;
     private float porcentagemDoDesconto;
@@ -122,5 +122,15 @@ public class Planos{
             this.mensalidadeDoCliente = mensalidadeDoCliente;}
     }
 
+    @Override
+    public float calcularValorFinal() {
+        return getMensalidadeDoCliente();
+    }
+
+    @Override
+    public void exibirDetalhesFatura() {
+        System.out.printf("%n[Fatura Plano] %s - Mensalidade: R$ %.2f (Desconto em servicos: %.1f%%)%n", 
+            getNomeDoPlano(), getMensalidadeDoCliente(), getPorcentagemDoDesconto());
+    }
     
 }
