@@ -1,16 +1,3 @@
-//Parte de ROBERTO
-
-/*Cadastro dos Pets: Registrar os animais (especificando cachorro, gato, etc) e vincular ao
-dono. Enquadramento POO: Herança e Associação. */
-
-/*LEMBRAR DE DAR PULL E PUSH E FAZER APENAS AS PARTES CONFORME AS AULAS DE IVNA, SEM PRESSA 
-
-E DE UTILIZAR DURANTE O PROJETO OS 4 PILARES DE POO: ABSTRAÇÃO, ENCAPSULAMENTO, HERANÇA E POLIFORMISMO
-
-*/
-
-
-
 package clinico;
 
 import administrativo.Cliente; // Importando a classe Cliente do pacote administrativo
@@ -42,15 +29,14 @@ public abstract class Animal {
         System.out.println("-------------------------");
     }
 
-    // Getters e Setters com validações básicas
+    // Getters e Setters com tratamento de exceções
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
         if (nome == null || nome.trim().isEmpty()) {
-            System.out.println("O nome do animal não pode ser vazio!");
-            return;
+            throw new DadosInvalidosException("O nome do animal não pode ser vazio!");
         }
         this.nome = nome;
     }
@@ -61,8 +47,7 @@ public abstract class Animal {
 
     public void setIdade(int idade) {
         if (idade < 0) {
-            System.out.println("A idade não pode ser negativa!");
-            return;
+            throw new DadosInvalidosException("A idade não pode ser negativa!");
         }
         this.idade = idade;
     }
@@ -73,8 +58,7 @@ public abstract class Animal {
 
     public void setPeso(double peso) {
         if (peso <= 0) {
-            System.out.println("O peso deve ser maior que zero!");
-            return;
+            throw new DadosInvalidosException("O peso deve ser maior que zero!");
         }
         this.peso = peso;
     }
@@ -85,8 +69,7 @@ public abstract class Animal {
 
     public void setTutor(Cliente tutor) {
         if (tutor == null) {
-            System.out.println("O animal precisa estar vinculado a um cliente/tutor!");
-            return;
+            throw new DadosInvalidosException("O animal precisa estar vinculado a um cliente/tutor!");
         }
         this.tutor = tutor;
     }

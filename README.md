@@ -43,11 +43,11 @@ Responsável pela gestão de pacientes (animais), consultas, prontuários médic
   - `List<Consulta>` para histórico sequencial de atendimentos.
   - `Set<Vacina>` para garantia de unicidade de registos de vacinas.
 - **Persistência de Dados (I/O):** Gravação e leitura de registos em arquivo `animais_cadastrados.csv` (`java.nio.file`).
-- **Testes Unitários:** Suíte automatizada de testes com **JUnit 5** no módulo clínico.
+- **Testes Unitários em Java Puro:** Implementados na classe `TesteClinico.java` para validar isoladamente as regras de negócio do módulo clínico (validação de dados, exceções e operações de repositório) sem a necessidade de bibliotecas externas.
 
 ---
 
-## 📁 Organização de Arquivos
+## 📁 Organização do Projeto
 
 ```text
 projeto-poo/
@@ -63,17 +63,16 @@ projeto-poo/
 │   ├── clinico/
 │   │   ├── Animal.java
 │   │   ├── Cachorro.java
-│   │   ├── Gato.java
 │   │   ├── Consulta.java
-│   │   ├── Prontuario.java
-│   │   ├── Vacina.java
-│   │   ├── RepositorioClinico.java
 │   │   ├── DadosInvalidosException.java
-│   │   └── ElementoNaoEncontradoException.java
+│   │   ├── ElementoNaoEncontradoException.java
+│   │   ├── Gato.java
+│   │   ├── Prontuario.java
+│   │   ├── RepositorioClinico.java
+│   │   ├── TesteClinico.java
+│   │   └── Vacina.java
 │   └── Main.java
-├── test/
-│   └── clinico/
-│       └── ClinicoTest.java
+├── animais_cadastrados.csv
 └── README.md
 
 

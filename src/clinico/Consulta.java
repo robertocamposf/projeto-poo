@@ -12,6 +12,7 @@ E DE UTILIZAR DURANTE O PROJETO OS 4 PILARES DE POO: ABSTRAÇÃO, ENCAPSULAMENTO
 package clinico;
 
 import administrativo.Servicos;
+import administrativo.Cliente;
 import administrativo.Faturamento;
 import administrativo.Planos;
 import administrativo.PlanoBasico;
@@ -34,21 +35,13 @@ public class Consulta {
     }
 
     // Método inteligente que calcula desconto com base no plano do Cliente/Tutor
-    private void gerarFaturamentoAutomatico() {
-        float precoBase = servico.getPrecoBase();
-        float desconto = 0.0f;
-
-        // Verifica se o animal tem tutor e se o tutor possui um plano associado
-        if (animal != null && animal.getTutor() != null) {
-            Planos plano = animal.getTutor().getPlanoDoCliente();
-            if (plano != null) {
-                // Polimorfismo / Verificação de instâncias de planos
-                desconto = (precoBase * plano.getPorcentagemDoDesconto()) / 100.0f;
-            }
-        }
-
-        this.faturamento = new Faturamento(precoBase, desconto);
+   // Método que utiliza diretamente o construtor criado por Jeanne
+private void gerarFaturamentoAutomatico() {
+    if (servico != null) {
+        Cliente tutor = (animal != null) ? animal.getTutor() : null;
+        this.faturamento = new Faturamento(tutor, servico);
     }
+}
 
     public void finalizarConsulta(String diagnostico, String prescricao) {
         this.prontuario = new Prontuario(diagnostico, prescricao);

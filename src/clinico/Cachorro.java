@@ -31,11 +31,10 @@ public class Cachorro extends Animal {
     }
 
     public void setRaca(String raca) {
-        if (raca == null || raca.trim().isEmpty()) {
-            System.out.println("A raça não pode ser vazia!");
-            return;
-        }
-        this.raca = raca;
+    if (raca == null || raca.trim().isEmpty()) {
+        throw new DadosInvalidosException("A raça não pode ser vazia!");
+    }
+    this.raca = raca;
     }
 
     public boolean isRacaPura() {
